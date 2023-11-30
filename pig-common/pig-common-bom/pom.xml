@@ -6,7 +6,7 @@
 
     <groupId>com.pig4cloud</groupId>
     <artifactId>pig-common-bom</artifactId>
-    <version>3.6.7</version>
+    <version>3.7.1-JDK8</version>
     <packaging>pom</packaging>
 
     <name>pig-common-bom</name>
@@ -15,25 +15,28 @@
 
     <properties>
         <pig.common.version>${project.version}</pig.common.version>
-        <spring-boot.version>2.7.10</spring-boot.version>
+        <spring-boot.version>2.7.16</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <log4j2.version>2.17.1</log4j2.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <git.commit.plugin>4.9.9</git.commit.plugin>
-        <spring.checkstyle.plugin>0.0.38</spring.checkstyle.plugin>
+        <spring.checkstyle.plugin>0.0.39</spring.checkstyle.plugin>
         <fastjson.version>1.2.83</fastjson.version>
+        <knife4j.version>3.0.3</knife4j.version>
         <springdoc.version>1.6.9</springdoc.version>
         <swagger.core.version>2.2.0</swagger.core.version>
-        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+        <mybatis-plus.version>3.5.4</mybatis-plus.version>
+        <dynamic-ds.version>4.2.0</dynamic-ds.version>
         <mysql.version>8.0.33</mysql.version>
         <seata.version>1.6.1</seata.version>
         <excel.version>1.2.6</excel.version>
         <asm.version>7.1</asm.version>
+        <aws.version>1.11.543</aws.version>
         <oss.version>1.0.5</oss.version>
         <sms.version>2.0.2</sms.version>
         <jaxb.version>2.3.5</jaxb.version>
-        <hutool.version>5.8.19</hutool.version>
+        <hutool.version>5.8.22</hutool.version>
         <mica.version>2.7.4</mica.version>
         <sentinel.version>1.8.4</sentinel.version>
     </properties>
@@ -93,6 +96,11 @@
             </dependency>
             <dependency>
                 <groupId>com.pig4cloud</groupId>
+                <artifactId>pig-common-oss</artifactId>
+                <version>${pig.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pig4cloud</groupId>
                 <artifactId>pig-upms-api</artifactId>
                 <version>${pig.common.version}</version>
             </dependency>
@@ -102,6 +110,12 @@
                 <version>${mysql.version}</version>
             </dependency>
             <!--springdoc -->
+            <!--引入Knife4j的官方ui包-->
+            <dependency>
+                <groupId>io.springboot</groupId>
+                <artifactId>knife4j-openapi3-ui</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springdoc</groupId>
                 <artifactId>springdoc-openapi-webmvc-core</artifactId>
@@ -133,6 +147,18 @@
                 <groupId>com.pig4cloud.excel</groupId>
                 <artifactId>excel-spring-boot-starter</artifactId>
                 <version>${excel.version}</version>
+            </dependency>
+            <!--动态数据源组件-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-ds.version}</version>
+            </dependency>
+            <!-- S3 sdk -->
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-s3</artifactId>
+                <version>${aws.version}</version>
             </dependency>
             <!--  阿里云短信下发 -->
             <dependency>
